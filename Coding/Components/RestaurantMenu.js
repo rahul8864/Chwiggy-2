@@ -7,12 +7,13 @@ import {
   RESTAURANT_TYPE_KEY,
 } from "../constants";
 import { MenuShimmer } from "./Shimmer";
-import useResMenuData from "../Hooks/useResMenuData"; // imported custom hook useResMenuData which gives restaurant Menu data from swigy api
+import useResMenuData from "../Hooks/useResMenuData"; 
 import { useDispatch } from "react-redux";
 import { addItems } from "./cartSlice"
 import { ToastContainer, toast } from 'react-toastify';
 import { Slide, Zoom, Flip, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const RestaurantMenu = () => {
   const { resId } = useParams(); // call useParams and get value of restaurant id using object destructuring
   const [restaurant, menuItems] = useResMenuData(
@@ -23,8 +24,6 @@ const RestaurantMenu = () => {
   );
 
 
-  
-  // if user is not Online then return UserOffline component
  
 const dispatch=useDispatch();
 const handleAction=(item) => {
@@ -95,7 +94,7 @@ const handleAction=(item) => {
                  <ToastContainer
                   style={{border:"none"}}
                     position="top-right"
-                    autoClose={500}
+                    autoClose={100}
                     hideProgressBar={true}
                     newestOnTop={false}
                     closeOnClick
@@ -103,8 +102,8 @@ const handleAction=(item) => {
                     pauseOnFocusLoss
                     draggable
                     pauseOnHover
-                    transition={Slide}
-                    theme="colored"
+                    transition={Flip}
+                    theme="light"
                     />
                 </div>
               </div>

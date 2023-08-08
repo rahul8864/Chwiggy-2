@@ -1,10 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react"; /* This is named export */
-import Shimmer from "./Shimmer"; /* This is default export */
+import { useState } from "react"; 
+import Shimmer from "./Shimmer"; 
 import { swiggy_api_URL } from "../constants";
 import { Link } from "react-router-dom";
-import { filterData } from "../Utils/Helper"; // For reusability or readability filterData function is added in Helper.js file of Utils folder
-import useResData from "../Hooks/useResData"; // imported custom hook useResData which gives All Restaurant and  Filtered Restaurant data from swigy api
+import { filterData } from "../Utils/Helper"; 
+import useResData from "../Hooks/useResData"; 
 
 import searchImg from "../Images/search-12-32.png";
  
@@ -15,10 +15,7 @@ const Body = () => {
   const [allRestaurants, FilterRes] = useResData(swiggy_api_URL);
   const [filteredRestaurants, setFilteredRestaurants] = useState(null);
 
-   
-
-
-  // use searchData function and set condition if data is empty show error message
+  
   const searchData = (searchText, restaurants) => {
     if (searchText !== "") {
       const filteredData = filterData(searchText, restaurants);
@@ -57,7 +54,7 @@ const Body = () => {
         <div
           className="search-btn"
           onClick={() => {
-            // user click on button searchData function is called
+            
             searchData(searchText, allRestaurants);
           }}
         >
