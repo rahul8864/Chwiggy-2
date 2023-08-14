@@ -1,9 +1,26 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 
 const About = () => {
+  const words = ['Home', 'Office', 'Party', 'Picnic' ,'Ride'];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [word, setWord] = useState('');
   
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
+    setWord(words[currentIndex]);
+  }, [currentIndex]);
   return (
     <div>
       
@@ -11,7 +28,7 @@ const About = () => {
         <div className="about-left">
           <h1>
            Delivering   <br /> Delicious Moments<br />{" "}
-            <span className="pink-text">to Your Doorstep</span>
+            <span className="pink-text">to Your {word}</span>
           </h1>
           <h4>
             Elevating Your Dining Experience, <span>Anytime</span><span>, Anywhere.</span>

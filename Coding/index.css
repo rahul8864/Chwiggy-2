@@ -164,7 +164,7 @@ a {
 
 /* search container CSS Start*/
 .search-container {
-  margin: 100px auto 20px;
+  margin: 30px auto 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,6 +234,8 @@ a {
   align-self: stretch;
   background-color: var(--dark-blue);
   min-height: 50vh;
+  transition: all;
+  transition-duration: 600ms;
 }
 
 .card {
@@ -700,6 +702,10 @@ a {
   color: var(--pink-main);
   font-weight: 600;
 }
+.flipped {
+  transform: rotateY(180deg);
+}
+
 .about-container .about-right {
   padding-left: 20px;
   overflow-y: hidden;
@@ -991,7 +997,7 @@ a {
     transform: translateX(90px);
   }
   .search-container {
-    margin: 80px 10px auto 0px;
+    margin: -10px 10px auto 0px;
     min-width:100vw;
   }
   .search-container>input {

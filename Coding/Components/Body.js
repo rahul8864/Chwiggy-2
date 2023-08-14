@@ -7,6 +7,7 @@ import { filterData } from "../Utils/Helper";
 import useResData from "../Hooks/useResData"; 
 
 import searchImg from "../Images/search-12-32.png";
+import OfferCarousel from "./OfferCarousel";
  
 const Body = () => {
   
@@ -37,6 +38,7 @@ const Body = () => {
 
   return (
     <>
+      <OfferCarousel/>
       <div className="search-container">
     
         <input

@@ -15,25 +15,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; 
 import {Provider} from"react-redux"
 import Cart from "./Components/Cart";
 import store from "./Utils/store"
-/* My Food App structure will look like this, 
-            1) Header
-                - Logo
-                - Nav Items(right side)
-                - Cart
-            2) Body
-                - Search bar
-                - Restaurants List
-                    - Restaurant card
-                        - Image
-                        - Name
-                        - Rating
-            3) Footer
-                - Links
-                - Copyrights
-       
-*/
 
- 
 const About=lazy(() => import('./Components/About'));
 const AppLayout = () => {
   return (
@@ -45,27 +27,26 @@ const AppLayout = () => {
   );
 };
 
-// call createBrowserRouter for routing different pages
+
 const appRouter = createBrowserRouter([
   {
-    path: "/", // show path for routing
-    element: <AppLayout />, // show component for particular path
-    errorElement: <Error />, // show error component for path is different
+    path: "/", 
+    element: <AppLayout />, 
+    errorElement: <Error />, 
+    
     children: [
-      // show children component for routing
+      
       {
         path: "/",
         element: <Body />,
+        
       },
       {
         path: "about",
         element: <Suspense>
           <About />
         </Suspense>,
-        // children: [{ // nested routing
-        //   path: "profile",
-        //   element: <Profile />,
-        // }]
+        
       },
       {
         path: "contact",

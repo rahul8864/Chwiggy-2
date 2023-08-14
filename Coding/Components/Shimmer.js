@@ -1,6 +1,6 @@
 import { shimmer_card_unit, shimmer_menu_card_unit } from "../constants";
 
-// Shimmer card to display with animation
+
 const CardShimmer = () => {
   return (
     <div className="shimmer-card">
@@ -55,7 +55,7 @@ export const MenuShimmer = () => {
 const Shimmer = () => {
   return (
     <div className="shimmer-container">
-      {/* create a new Array instance using Array() constructor and map through every element of array */}
+      
       {Array(shimmer_card_unit).fill("").map((element, index) => {
         return <CardShimmer key={index} />;
       })}
